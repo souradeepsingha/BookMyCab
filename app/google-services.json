@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "840003003616",
+    "project_id": "transportapp-78250",
+    "storage_bucket": "transportapp-78250.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840003003616:android:95e11bc31a288248dedc85",
+        "android_client_info": {
+          "package_name": "com.example.navberdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840003003616-khstjf6pbt5tnrgqnmbo3llsli9a85t9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cuWbGrCyJwk3gz2c6cSM7eF-vjLtJB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840003003616-khstjf6pbt5tnrgqnmbo3llsli9a85t9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

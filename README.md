@@ -19,7 +19,8 @@ BookMyCab is an Android ride booking application that allows users to book cabs 
 - PHP (Backend)
 - MySQL (Database)
 - Razorpay API (Payment Gateway)
-- [Add any other technologies used in the project]
+- Google map API(Auto Locations)
+- [Use Your Api Key]
 
 ## Installation and Setup
 

@@ -28,6 +28,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.razorpay.Checkout;
+import com.razorpay.PaymentResultListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,7 +39,7 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Listviewactivity2 extends AppCompatActivity {
+public class Listviewactivity2 extends AppCompatActivity implements PaymentResultListener {
 
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
     private EditText phoneNumberEditText, messageEditText;
@@ -185,6 +187,16 @@ progressBar.setVisibility(View.VISIBLE);
         requestQueue.add(jsonArrayRequest);
     }
 
+    @Override
+    public void onPaymentSuccess(String s) {
+        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPaymentError(int i, String s) {
+        Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();
+    }
+
     public class MyAdapter extends BaseAdapter {
         @Override
         public int getCount() {
@@ -240,9 +252,7 @@ progressBar.setVisibility(View.VISIBLE);
                         String phoneNumber =phone1;
                         String message = "your got a customer mr "+name+" Do you want to pick up him?";
                         sendSMS(phoneNumber, message);
-
-                        Intent myintent=new Intent(Listviewactivity2.this,Bokingpage.class);
-                        startActivity(myintent);
+                        payment();
 
                     }
 
@@ -297,5 +307,28 @@ progressBar.setVisibility(View.VISIBLE);
             Toast.makeText(Listviewactivity2.this, "SMS sending failed", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
+    }
+
+    private void payment(){
+
+        Checkout co=new Checkout();
+        JSONObject object=new JSONObject();
+        try {
+            object.put("name","XYZ");
+            object.put("description","Description");
+            object.put("image","");
+            object.put("currency","INR");
+            object.put("amount","100");
+            JSONObject prefill=new JSONObject();
+            prefill.put("contact","Your number");
+            prefill.put("email","Your Email");
+            object.put("prefill",prefill);
+            co.open(Listviewactivity2.this,object);
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 }

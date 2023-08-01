@@ -30,6 +30,9 @@
             android:exported="true">
 
         </activity>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="Your Api" />
     </application>
 
 </manifest>

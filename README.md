@@ -27,5 +27,5 @@ BookMyCab is an Android ride booking application that allows users to book cabs 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/bookmycab.git
-cd bookmycab
+git clone https://github.com/souradeepsingha/BookMyCab.git
+cd BookMyCab
